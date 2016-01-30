@@ -1,0 +1,238 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+
+set $mod Mod4
+set $mod2 Mod1
+
+
+# Keymap - English and Hebrew switching using Alt+Shift
+exec --no-startup-id setxkbmap -option grp:switch,grp:alt_shift_toggle, us,il
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:terminus 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+
+# Volume controle
+bindsym $mod2+Up exec amixer -c 0 set Master 2+
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2+
+bindsym $mod2+Down exec amixer -c 0 set Master 2-
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2-
+
+# MPD controle
+bindsym XF86AudioPlay exec mpc toggle
+bindsym Control+$mod2+Up exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym Control+$mod2+Right exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym Control+$mod2+Left exec mpc prev  
+bindsym XF86AudioStop exec mpc stop
+bindsym Control+$mod2+Down exec mpc stop
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+bindsym $mod2+F4 kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run -b -nb "#000000" -fn "-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-*"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# disable titlebar
+for_window [class="^.*"] border pixel 1
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# workspaces
+set $workspace1 1:
+set $workspace2 2:
+set $workspace3 3:
+set $workspace4 4:
+set $workspace5 5:
+set $workspace6 6:6
+set $workspace7 7:7
+set $workspace8 8:
+set $workspace9 9:9
+set $workspace10 10:
+
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+set $bg     #2c2c2e
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #a0afa0
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+
+# set some nice colors      border     background  text 	other border
+client.focused              $bg        $bg         #ffffff	$bg
+client.unfocused            $bg        $bg         $ia
+client.focused_inactive     $bg        $bg         #ffffff
+client.urgent               $rd        $rd         $tx
+
+
+bar {
+	position		top
+
+	tray_output none
+	strip_workspace_numbers yes
+ 	
+	font pango:terminus 	9
+	colors {
+	        background #000
+        	statusline #fff
+
+	        focused_workspace  #888888 	#212121 	#ffffff
+        	active_workspace   #888888	#333333 	#ffffff
+	        inactive_workspace #888888 	#222222
+        	urgent_workspace   #ffffff 	#900000
+	}
+}
+
+bar {
+	workspace_buttons no
+	status_command	~/.i3/bin/status.sh
+}
+
+
+# Windows rules
+for_window [class="^feh"] floating enable
+
+# Wallpaper
+exec feh --bg-scale ~/.i3/wallpaper/Ghost-Nebula-Wallpaper.jpg
+
+# Programs 
+exec mpd
+exec caffeine
+
