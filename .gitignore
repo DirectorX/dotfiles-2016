@@ -3,3 +3,6 @@
 *.db
 irssi/logs
 mpd/playlists
+config/ranger/bookmarks
+config/ranger/tagged
+
