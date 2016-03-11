@@ -230,7 +230,7 @@ bar {
 for_window [class="^feh"] floating enable
 
 # Wallpaper
-exec feh --bg-scale ~/.i3/wallpaper/Ghost-Nebula-Wallpaper.jpg
+exec feh --bg-scale ~/.i3/wallpaper/3d_glasses.png
 
 # Programs 
 exec mpd
