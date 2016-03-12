@@ -52,19 +52,19 @@ TEXT
 # JSON for i3bar
 [\
 #{ "full_text": "${exec whoami}@${nodename} " },
-${if_running mpd}${if_mpd_playing}{ "full_text": " ${smart_mpd}" },${endif}${endif}
+${if_running mpd}${if_mpd_playing}{ "full_text": " ${exec mpc | head -1}" },${endif}${endif}
 ${if_up tun0}{ "full_text": " ${addr tun0}" , "color": "\#00FF00"},${endif}
 #{ "full_text": " ${exec curl icanhazip.com}" },
 { "full_text": "  ${downspeed enp3s0}/s  ${upspeed enp3s0}/s T: ${totaldown enp3s0}" },
-#{ "full_text": "CPU: ${cpu cpu0}%", "color": ${if_match ${cpu cpu0}>90}"\#FF0000"${else}${if_match ${cpu cpu0}<10}"\#00CC00"${else}"\#ffffff"${endif}${endif} },
+{ "full_text": "CPU: ${cpu cpu0}%", "color": ${if_match ${cpu cpu0}>90}"\#FF0000"${else}${if_match ${cpu cpu0}<10}"\#00CC00"${else}"\#ffffff"${endif}${endif} },
 { "full_text": " / ${fs_free /}" },
 { "full_text": " ~/ ${fs_free /home}" },
-{ "full_text": " mem: ${memperc}%", "short_text": " ${memperc}%"\
+{ "full_text": " ${mem} (${memperc}%)", "short_text": " ${mem} (${memperc}%)"\
 ${if_match ${memperc}>90}, "color": "\#FF0000"${endif} },
-{ "full_text": " ${exec sensors | grep 'temp1' | cut -c16-19 | sed '/^$/d' }°C" },
-{ "full_text": " ${uptime_short}", "min_width": "59m59s" }
+#{ "full_text": " ${exec sensors | grep 'temp1' | cut -c16-19 | sed '/^$/d' }°C" },
+{ "full_text": " ${uptime_short}", "min_width": "59m59s" },
 #{ "full_text": " ${exec setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}'}"},
 #{ "full_text": "${if_empty ${exec amixer get Master | grep "\[on\]" | awk '{print $4}' | tail -1 | tr -d '[]'}}  {$else}  ${exec amixer get Master | grep "\[on\]" | awk '{print $4}' | tail -1 | tr -d '[]'} ${endif}", "color": "\#FFFFFF"},
-#{ "full_text": " ${time %a %d/%m/%y} - ${time %H:%M}", "color": "\#FFFFFF"}
+{ "full_text": " ${time %a %d/%m/%y} -  ${time %H:%M}", "color": "\#FFFFFF"}
 ##{ "full_text": " ${execi 300 ~/.i3/conky/weather.sh}" },
 ],
