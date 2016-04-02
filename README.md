@@ -6,7 +6,7 @@ preview image:
 ![preview image](https://raw.githubusercontent.com/DirectorX/dotfiles/master/preview.png)
 
 ### Info
-- Distribution - Arch Linux.
+- Distribution - Arch Linux
 - WM - i3wm
 
 ### programs
@@ -50,6 +50,7 @@ preview image:
   - [Google Image Search](https://addons.mozilla.org/en-US/firefox/addon/google-similar-images/)
   - [Octotree](https://addons.mozilla.org/en-US/firefox/addon/octotree/?src=ss)
   - [View Cookies](https://addons.mozilla.org/en-US/firefox/addon/view-cookies/?src=ss)
+  - [Disable WebRTC](https://addons.mozilla.org/he/firefox/addon/happy-bonobo-disable-webrtc/)
 - theme originally from [here](http://twily.info/firefox/stylish/firefox-css#view). my custom version can be found at `firefox-theme.css`
   - install with stylish (firefox addon)
 
