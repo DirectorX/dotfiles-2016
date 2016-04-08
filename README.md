@@ -24,6 +24,7 @@ preview image:
 - Screenshot application - Gyazo - **aur** gyazo-git
 - Screensaver killer - **aur** caffeine-ng
 - Editor - vim
+- // xkblayout-state **aur**
  
  
 ### theme
