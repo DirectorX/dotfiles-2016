@@ -61,6 +61,8 @@ bindsym $mod+d exec dmenu_run -b -nb "#000000" -fn "-*-terminus-medium-r-*-*-12-
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+focus_follows_mouse no
+
 # disable titlebar
 for_window [class="^.*"] border pixel 1
 
