@@ -8,12 +8,13 @@ preview image:
 ### Info
 - Distribution - Arch Linux
 - WM - i3wm
+- Compositor - compton
 
 ### programs
 
 - Shell - zsh (with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
 - Terminal emulator - urxvt
-- Menu - dmenu
+- Menu - rofi-git **aur** ,dmenu
 - Web browser - firefox
 - Music player - mpd, mpc, ncmpcpp
 - Video player - mpv
