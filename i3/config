@@ -55,11 +55,14 @@ bindsym $mod+Shift+q kill
 bindsym $mod2+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -nb "#000000" -fn "-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-*"
+#bindsym $mod+d exec dmenu_run -b -nb "#000000" -fn "-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-*"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# start rofi run (a program launcher)
+bindsym $mod+d exec ~/.i3/bin/rofi.sh -show run 
 
 focus_follows_mouse no
 
@@ -240,4 +243,5 @@ exec feh --bg-scale ~/.i3/wallpaper/3d_glasses.png
 # Programs 
 exec mpd
 exec caffeine
+exec compton
 
