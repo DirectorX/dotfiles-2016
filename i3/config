@@ -26,6 +26,8 @@ font pango:terminus 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# lock
+bindsym $mod2+l exec lock
 
 # Volume controle
 bindsym $mod2+Up exec amixer -c 0 set Master 2+
@@ -216,15 +218,12 @@ bar {
 	tray_output none
 	strip_workspace_numbers yes
  	
-	font pango:terminus 	9
+	font pango:terminus	9
 	colors {
-	        background #000
         	statusline #fff
-
-	        focused_workspace  #888888 	#212121 	#ffffff
-        	active_workspace   #888888	#333333 	#ffffff
-	        inactive_workspace #888888 	#222222
-        	urgent_workspace   #ffffff 	#900000
+		background #000
+		inactive_workspace #32323200 #32323200 #5c5c5c
+		focused_workspace  #32323200 #32323200 #ffffff
 	}
 }
 

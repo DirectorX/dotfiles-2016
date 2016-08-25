@@ -63,7 +63,7 @@ ${if_up tun0}{ "full_text": " ${addr tun0}" , "color": "\#00FF00"},${endif}
 ${if_match ${memperc}>90}, "color": "\#FF0000"${endif} },
 { "full_text": " ${exec ~/.i3/bin/temp.sh}"},
 { "full_text": " ${uptime_short}", "min_width": "59m59s" },
-{ "full_text": " ${exec echo `xkblayout-state print '%s'`}"},
+{ "full_text": " ${exec echo `xkblayout-state -p '%s'`}"},
 { "full_text": "${exec ~/.i3/bin/volume.sh}", "color": "\#FFFFFF"},
 { "full_text": " ${time %a %d/%m/%y} -  ${time %H:%M}", "color": "\#FFFFFF"}
 ##{ "full_text": " ${execi 300 ~/.i3/conky/weather.sh}" },
