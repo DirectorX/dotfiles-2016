@@ -1,45 +1,44 @@
-dotfiles
+Dotfiles
 ========
 
-preview image:
-
+Preview image:
 ![preview image](https://raw.githubusercontent.com/DirectorX/dotfiles/master/preview.png)
 
 ### Info
-- Distribution - Arch Linux
+- Distribution - [Void Linux](http://www.voidlinux.eu/)
 - WM - i3wm
 - Compositor - compton
 
-### programs
-
+### Programs
 - Shell - zsh (with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
 - Terminal emulator - urxvt
-- Menu - rofi-git **aur** ,dmenu
+- Menu - **rofi** ,dmenu
 - Web browser - firefox
 - Music player - mpd, mpc, ncmpcpp
 - Video player - mpv
 - Image viewer - feh
 - Files browser - ranger, thunar
-- Status bar - **dzen2**, conky, i3status
+- Status bar - **conky**, i3status, dezen2
 - Torrent client - deluge
-- Screenshot application - Gyazo - **aur** gyazo-git
-- Screensaver killer - **aur** caffeine-ng
-- Editor - vim
-- // xkblayout-state **aur**
+- Screenshot application - gyazo
+- Screensaver killer - caffeine-ng
+- Editor - neovim
+- Keybard status - xkblayout-state
  
- 
-### theme
-- GTK - Pixel OldSchool - [P.O.S](http://iamfuss.deviantart.com/art/P-O-S-GTK-and-Emerald-128240064)
-- icons - flattr - flattr-icon-theme
+### Theme
+- GTK2/3 - Arc-Dark
+- Icons - Lüv Dark
 
-### fonts
+### Fonts
 
-- terminus - terminus-font
-  - powerline - **aur** terminess-powerline-font-git
--  font-awesome - **aur** ttf-font-awesome
+- Terminal emulator
+  - Source Code Pro (font-sourcecodepro) \w powerline
+- i3
+  - terminus-font
+  - font-awesome
 
-##### firefox info
-- addons
+##### Firefox info
+- Addons
   - [VimFx](https://addons.mozilla.org/en-US/firefox/addon/vimfx/?src=ss)
   - [stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/)
   - [noscript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
@@ -53,6 +52,6 @@ preview image:
   - [Octotree](https://addons.mozilla.org/en-US/firefox/addon/octotree/?src=ss)
   - [View Cookies](https://addons.mozilla.org/en-US/firefox/addon/view-cookies/?src=ss)
   - [Disable WebRTC](https://addons.mozilla.org/he/firefox/addon/happy-bonobo-disable-webrtc/)
-- theme originally from [here](http://twily.info/firefox/stylish/firefox-css#view). my custom version can be found at `firefox-theme.css`
-  - install with stylish (firefox addon)
+- Theme originally from [here](http://twily.info/firefox/stylish/firefox-css#view). My custom version found at `firefox-theme.css`
+  - Installed with stylish (firefox addon)
 
