@@ -243,4 +243,5 @@ exec feh --bg-scale ~/.i3/wallpaper/3d_glasses.png
 exec mpd
 exec caffeine
 exec compton
+exec xset -b
 
