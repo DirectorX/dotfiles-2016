@@ -244,4 +244,5 @@ exec mpd
 exec caffeine
 exec compton
 exec xset -b
+exec devmon
 

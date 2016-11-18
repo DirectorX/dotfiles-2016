@@ -56,7 +56,7 @@ ${if_running mpd}${if_mpd_playing}{ "full_text": " ${exec mpc | head -1}" },$
 ${if_up tun0}{ "full_text": " ${addr tun0}" , "color": "\#00FF00"},${endif}
 #{ "full_text": " ${exec curl icanhazip.com}" },
 { "full_text": "  ${downspeed enp3s0}/s  ${upspeed enp3s0}/s T: ${totaldown enp3s0}" },
-{ "full_text": "CPU: ${cpu cpu0}%", "color": ${if_match ${cpu cpu0}>90}"\#FF0000"${else}${if_match ${cpu cpu0}<10}"\#00CC00"${else}"\#ffffff"${endif}${endif} },
+{ "full_text": " ${cpu cpu0}%", "color": ${if_match ${cpu cpu0}>90}"\#FF0000"${else}${if_match ${cpu cpu0}<10}"\#00CC00"${else}"\#ffffff"${endif}${endif} },
 { "full_text": " / ${fs_free /}" },
 { "full_text": " ~/ ${fs_free /home}" },
 { "full_text": " ${mem} (${memperc}%)", "short_text": " ${mem} (${memperc}%)"\
